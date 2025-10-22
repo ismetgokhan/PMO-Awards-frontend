@@ -1,0 +1,84 @@
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001; /* Navbar'dan büyük olmalı */
+}
+
+.topbar-container {
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+}
+
+.topbar-left img {
+  height: 40px;
+  object-fit: contain;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.social-icons a {
+  color: #555;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.social-icons a:hover {
+  color: #003366;
+}
+
+.lang-switch {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: #333;
+}
+
+.pmi-btn {
+  background-color: #4b2ab0;
+  color: white;
+  text-decoration: none;
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.pmi-btn:hover {
+  background-color: #3a1d8c;
+}
+
+/* 🔹 Giriş Yap butonu */
+.login-btn-top {
+  background-color: #00509e;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.login-btn-top:hover {
+  background-color: #003f7f;
+  transform: scale(1.05);
+}

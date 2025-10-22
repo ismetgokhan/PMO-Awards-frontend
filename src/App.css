@@ -1,0 +1,509 @@
+/* ======================
+   GENEL GÖRÜNÜM
+====================== */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(180deg, #f9fafc 0%, #eef2f7 100%);
+  color: #222;
+}
+
+/* ======================
+   NAVBAR
+====================== */
+.navbar {
+  background: #003366;
+  color: white;
+  height: 70px;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-logo {
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.navbar-links a:hover,
+.navbar-links a.active {
+  opacity: 1;
+}
+
+/* ======================
+   HERO (Home)
+====================== */
+.home-hero {
+  margin-top: 10px;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 8%;
+  background: linear-gradient(135deg, #003366 40%, #00509e 100%);
+  color: white;
+}
+
+.home-hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  gap: 3rem;
+}
+
+.text-section {
+  max-width: 600px;
+}
+
+.text-section h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.text-section p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.image-section img {
+  width: 500px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* ======================
+   BUTONLAR
+====================== */
+.btn-primary,
+.btn-outline {
+  text-decoration: none;
+  padding: 0.9rem 2rem;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #ffffff;
+  color: #003366;
+}
+
+.btn-primary:hover {
+  background-color: #e6e6e6;
+}
+
+.btn-outline {
+  border: 3px solid white;
+  color: white;
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ======================
+   HISTORY & PAGE CONTAINER
+====================== */
+.page-container {
+  padding: 7rem 10% 3rem;
+  background: #f9fafc;
+  padding-top: 140px;
+}
+
+.history-container {
+  background: white;
+  padding: 3rem;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  margin: 2rem auto;
+  max-width: 1000px;
+}
+
+.history-container h2 {
+  color: #003366;
+  margin-bottom: 2rem;
+}
+
+.history-container h3 {
+  color: #00509e;
+  margin-bottom: 1rem;
+}
+
+.history-container p,
+.history-container li {
+  line-height: 1.7;
+  color: #333;
+}
+
+/* ======================
+   GÖNÜLLÜLER (VOLUNTEERS)
+====================== */
+.volunteers-page {
+  padding-top: 140px;
+  background: #eef3f9;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.volunteers-page h1 {
+  font-size: 2.4rem;
+  color: #003366;
+  margin-bottom: 0.5rem;
+}
+
+.volunteers-subtitle {
+  color: #555;
+  margin-bottom: 2.5rem;
+  font-size: 1.1rem;
+}
+
+.volunteers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+/* Kart yapısı */
+.volunteer-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  max-width: 300px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.volunteer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.volunteer-card.active {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  max-width: 360px;
+}
+
+/* Fotoğraf */
+.volunteer-photo {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 50%;
+  border: 3px solid #003366;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.volunteer-card.active .volunteer-photo {
+  transform: scale(1.1);
+}
+
+/* Açılan detay */
+.volunteer-details {
+  margin-top: 1rem;
+  animation: fadeIn 0.4s ease;
+}
+
+.volunteer-details p {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+/* LinkedIn ikonu */
+.linkedin-icon {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.2s ease;
+}
+
+.linkedin-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Basit animasyon */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ======================
+   FOOTER
+====================== */
+footer {
+  background: #003366;
+  color: white;
+  padding: 2rem 10%;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  margin: 0 0.5rem;
+  opacity: 0.8;
+}
+
+footer a:hover {
+  opacity: 1;
+}
+
+/* ======================
+   RESPONSIVE
+====================== */
+@media (max-width: 900px) {
+  .home-hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .image-section img {
+    width: 100%;
+  }
+
+  .volunteers-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* ======================
+   ANİMASYONLAR
+====================== */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+.fade-in-delay {
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards;
+  animation-delay: 0.4s;
+}
+
+.slide-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUp 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.form-page {
+  background: #f7f9fc;
+  padding: 6rem 10%;
+  min-height: 100vh;
+}
+
+.application-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 700px;
+  margin: 2rem auto;
+}
+
+.application-form input,
+.application-form textarea {
+  padding: 0.9rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.declaration-section {
+  margin: 2rem 0;
+  text-align: left;
+}
+
+.declaration-section h3 {
+  color: #003366;
+  margin-bottom: 1rem;
+}
+
+.checkbox-label {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+.file-label {
+  font-weight: 600;
+  color: #003366;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.application-form input[type="file"] {
+  border: none;
+  padding: 0.5rem 0;
+}
+.pdf-container {
+  margin: 2rem 0;
+  text-align: left;
+}
+
+.pdf-viewer {
+  width: 100%;
+  height: 400px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow-y: scroll;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.checkbox-label input {
+  margin-right: 0.6rem;
+}
+.pdf-scrollbox {
+  width: 100%;
+  height: 400px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+.pdf-container {
+  margin: 2rem 0;
+  text-align: left;
+}
+
+.pdf-scrollbox {
+  width: 100%;
+  height: 400px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.checkbox-label input {
+  margin-right: 0.6rem;
+}
+.pdf-container {
+  margin: 2rem 0;
+  text-align: left;
+}
+
+.pdf-scrollbox {
+  width: 100%;
+  height: 400px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.checkbox-label input {
+  margin-right: 0.6rem;
+}
+.pdf-container {
+  margin: 2rem 0;
+  text-align: left;
+}
+
+.pdf-scrollbox {
+  display: block;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.checkbox-label input {
+  margin-right: 0.6rem;
+}
+
+.pdf-scrollbox::-webkit-scrollbar {
+  width: 10px;
+}
+
+.pdf-scrollbox::-webkit-scrollbar-thumb {
+  background: #003366;
+  border-radius: 5px;
+}

@@ -1,0 +1,168 @@
+/* ---------- Global / Reset ---------- */
+:root{
+  --primary:#003366;      /* PMI koyu mavi */
+  --accent:#006699;       /* vurgulu mavi */
+  --muted:#f4f7f9;        /* açık arka plan */
+  --card:#ffffff;         /* içerik kartı */
+  --text:#213547;
+  --glass: rgba(255,255,255,0.92);
+}
+
+*{box-sizing:border-box}
+html,body,#root{
+  height:100%;
+  width:100%;
+  margin:0;
+  padding:0;
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  color:var(--text);
+  background-color: #f3f6f8;
+}
+
+/* genel sayfa padding (tüm sayfaların kenardan boşluğu) */
+#root { padding: 28px; }
+
+/* ---------- Navbar ---------- */
+.app-navbar{
+  display:flex;
+  align-items:center;
+  gap:24px;
+  padding:18px 28px;
+  background: linear-gradient(90deg, rgba(0,19,51,0.95), rgba(0,34,68,0.95));
+  color:white;
+  position:sticky;
+  top:0;
+  z-index:999;
+  border-radius:10px;
+  margin-bottom:18px;
+}
+.app-navbar .brand { font-weight:700; font-size:1.25rem; letter-spacing:0.2px; }
+.app-navbar a{ color:rgba(255,255,255,0.92); text-decoration:none; font-weight:600; }
+.app-navbar a:hover{ text-decoration:underline; }
+
+/* ---------- Hero (tam ekran / büyük başlık) ---------- */
+.hero {
+  position:relative;
+  width:100%;
+  min-height:60vh;
+  display:flex;
+  align-items:center;
+  padding: clamp(24px, 6vw, 80px);
+  border-radius: 12px;
+  overflow:hidden;
+  background-position:center;
+  background-size:cover;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+/* koyu overlay okunurluk için */
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(180deg, rgba(3,16,35,0.45), rgba(3,16,35,0.55));
+  z-index:0;
+}
+
+.hero-inner{
+  position:relative;
+  z-index:2;
+  color: white;
+  max-width: 1200px;
+  width:100%;
+  display:flex;
+  gap:32px;
+  align-items:center;
+}
+
+/* hero metin kolonu */
+.hero-copy{
+  flex:1 1 600px;
+}
+.hero h1{
+  margin:0 0 8px 0;
+  font-size: clamp(28px, 4vw, 48px);
+  line-height:1.05;
+  letter-spacing: -0.5px;
+  color: #fff;
+}
+.hero p{
+  margin:0 0 18px 0;
+  font-size: clamp(15px, 1.6vw, 18px);
+  color: rgba(255,255,255,0.95);
+}
+
+/* hero CTA butonları */
+.hero-ctas { display:flex; gap:12px; flex-wrap:wrap; }
+.btn {
+  padding: 0.7rem 1.4rem;
+  border-radius:8px;
+  border:none;
+  font-weight:600;
+  cursor:pointer;
+}
+.btn-primary { background: var(--accent); color:white; box-shadow: 0 6px 18px rgba(0,102,153,0.18); }
+.btn-ghost { background:transparent; color:white; border:1px solid rgba(255,255,255,0.12); }
+
+/* hero görsel/sağ sütun (opsiyonel) */
+.hero-media { flex:0 0 360px; display:flex; justify-content:center; align-items:center; }
+.hero-media img{ max-width:100%; border-radius:1px; box-shadow: 0 8px 24px rgba(0,0,0,0.22); }
+
+/* ---------- Page sections (genel içerik akışı) ---------- */
+.page-section {
+  width:100%;
+  margin: 28px 0;
+  padding: 28px;
+  background: var(--glass);
+  border-radius:12px;
+  box-shadow: 0 8px 20px rgba(14,30,60,0.06);
+}
+
+/* section başlıkları */
+.section-title { font-size:1.6rem; color:var(--primary); margin-bottom:12px; font-weight:700; }
+.section-lead { margin:0 0 14px 0; color:#425a6a; }
+
+/* grid kutular (bilet fiyatları, kartlar vb.) */
+.grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap:16px;
+  align-items:start;
+}
+
+/* kart stili */
+.card {
+  background: var(--card);
+  padding:16px;
+  border-radius:10px;
+  box-shadow: 0 6px 18px rgba(14,30,60,0.06);
+  border: 1px solid rgba(10,20,40,0.04);
+}
+.card h4 { margin:0 0 8px 0; color:var(--primary); }
+.card p { margin:0; color:#556873; line-height:1.5; }
+
+/* testimonials */
+.testimonial {
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+}
+.testimonial img { width:64px; height:64px; object-fit:cover; border-radius:50%; }
+
+/* sponsors row */
+.sponsors {
+  display:flex;
+  gap:20px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+.sponsors img { height:36px; opacity:0.9; filter:grayscale(0.05); }
+
+/* responsive tweaks */
+@media (max-width:900px){
+  .hero { min-height:52vh; padding:24px; }
+  .hero-media { display:none; }
+  .hero-inner { flex-direction:column; align-items:flex-start; gap:12px; }
+  .page-section { padding:18px; }
+  #root { padding:16px; }
+}
