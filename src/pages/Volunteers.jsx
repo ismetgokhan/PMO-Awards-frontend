@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "../App.css";
-import Gaye from "../assets/Gaye.jpg";
-import Recep from "../assets/Recep.jpg";
-import Ismet from "../assets/Ismet.jpg";
+import gaye from "../assets/gaye.jpg";
+import recep from "../assets/recep.jpg";
+import ismet from "../assets/ismet.jpg";
 import linkedin from "../assets/linkedin.png"; // küçük LinkedIn logosu (32x32 önerilir)
 
 export default function Volunteers() {
@@ -13,7 +13,7 @@ export default function Volunteers() {
       id: 1,
       name: "Gaye Ege İzci",
       title: "PMO Awards Ekibi",
-      image: Gaye,
+      image: gaye,
       linkedin: "https://www.linkedin.com/in/egeizci/",
       bio: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error aspernatur vitae quam minima. Error delectus ex, quidem sapiente reprehenderit in minima molestiae quo doloremque non nisi, beatae quasi sint vero."
     },
@@ -21,7 +21,7 @@ export default function Volunteers() {
       id: 2,
       name: "Recep Soran",
       title: "PMO Awards Ekibi",
-      image: Recep,
+      image: recep,
       linkedin: "https://www.linkedin.com/in/recep-soran/",
       bio: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error earum ducimus quae id fugit magnam omnis ratione aliquam minima ab in enim, at, voluptatum totam placeat fugiat alias, debitis mollitia?"
     },
@@ -29,7 +29,7 @@ export default function Volunteers() {
       id: 3,
       name: "İsmet Gökhan",
       title: "PMO Awards Ekibi",
-      image: Ismet,
+      image: ismet,
       linkedin: "https://www.linkedin.com/in/ismet-gokhan/",
       bio: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus veritatis saepe, quae perferendis necessitatibus soluta laboriosam eos vel voluptatem facilis quisquam numquam dignissimos impedit quod molestiae eum ipsa, dolorem autem!"
     }
